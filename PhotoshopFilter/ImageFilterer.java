@@ -81,12 +81,6 @@ public class ImageFilterer {
                 
                 p.setRGB(invertedRed, invertedGreen, invertedBlue);
                 
-                //newPixels[row][col].setARGB(255, invertedRed, invertedGreen, invertedBlue);
-
-                //newPixels[row][col] = new Color(invertedRed, invertedGreen, invertedBlue);
-                //newPixels[row][col].setRGB(invertedRed, invertedGreen, invertedBlue);
-                //Pixel inverted = new Pixel(img.setRGB(invertedRed, invertedGreen, invertedBlue);
-                //newPixels[row][col] = px;
                 
                 
 
