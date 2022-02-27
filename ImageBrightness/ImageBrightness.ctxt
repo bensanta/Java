@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.target=ImageBrightness
+comment1.params=imageFile
+comment1.target=void\ lum(java.io.File)
+numComments=2

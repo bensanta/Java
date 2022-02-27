@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=HelloWorld
+comment0.text=\n\ \ Author\:\ Benjamin\ Santa\ \n\ \ Date\:\ 14\ January,\ 2022\n\ \ Course\:\ GOA\ CS2\:\ Java\n\ \ \n\ \ Prints\ "Hello,\ World".\ By\ tradition,\ this\ is\ everyone's\ first\ program.\n\n\ \ These\ 14\ lines\ of\ text\ are\ comments.\ They\ are\ not\ part\ of\ the\ code;\n\ \ they\ are\ here\ as\ a\ note\ to\ the\ reader\ of\ the\ program.\ \n\ \ \ \ \ \ The\ first\ 3\ lines\ tell\ the\ reader\ who,\ when,\ and\ why\n\ \ \ \ \ \ The\ next\ line\ describes\ the\ big\ picture\ purpose\ of\ the\ program.\ \n\ \ \n\ \ We\ will\ always\ include\ such\ lines\ in\ our\ programs\n
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+numComments=2

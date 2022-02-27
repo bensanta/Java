@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=ImageFilterer
+comment1.params=origFile
+comment1.target=void\ splitRGBs(java.lang.String)
+comment1.text=\n\ PRE\:\ origFile\ is\ a\ String\ filename\ of\ a\ picture\ file\ (gif,\ jpg,\ or\ png)\n\ POST\:\ imgPixels\ stores\ the\ corresponding\ components\ for\ each\ pixel\ in\ the\ image.\n\ \ \ \ \ \ imgPixels\ \ \ ->\ 2D\ array\ of\ each\ pixel\ in\ the\ image\ \ \n
+comment2.params=
+comment2.target=void\ invertImage()
+comment2.text=\n\ Invert\ the\ image's\ pixels\!\n
+comment3.params=
+comment3.target=void\ leftRightMirror()
+comment3.text=\n\ Mirrors\ the\ left\ side\ of\ the\ image\ onto\ the\ right.\n
+comment4.params=
+comment4.target=void\ diagMirror()
+comment4.text=\n\ Mirrors\ a\ square\ part\ of\ the\ picture\ from\ bottom\ left\ to\ top\ right\ around\ a\ mirror\ placed\ on\ the\ \n\ diagonal\ line.\ This\ will\ copy\ the\ triangular\ area\ to\ the\ left\ and\ below\ the\ diagonal\ line.\ \n\ This\ is\ like\ folding\ a\ square\ piece\ of\ paper\ from\ the\ bottom\ left\ to\ the\ top\ right,\ \n\ painting\ just\ the\ bottom\ left\ triangle\ and\ then\ (while\ the\ paint\ is\ still\ wet)\ folding\ the\ paper\ up\ \n\ to\ the\ top\ right\ again.\ The\ paint\ would\ be\ copied\ from\ the\ bottom\ left\ to\ the\ top\ right\n\ \n
+comment5.params=
+comment5.target=void\ edges()
+comment5.text=\n\ Compare\ the\ color\ at\ the\ current\ pixel\ with\ the\ pixel\ in\ the\ next\ column\ to\ the\ right.\ \n\ \n\ If\ the\ colors\ differ\ by\ more\ than\ some\ specified\ amount,\ this\ indicates\ that\ an\ edge\ has\ been\ \n\ detected\ and\ the\ current\ pixel\ color\ should\ be\ set\ to\ black.\ Otherwise,\ the\ current\ pixel\ is\ not\ \n\ part\ of\ an\ edge\ and\ its\ color\ should\ be\ set\ to\ white.\ \n\ \n\ You\ can\ use\ the\ Pixel\ class'\ colorDistance\ method\ to\ calculate\ the\ difference\ between\ two\ colors.\ \n\ \n\ Compare\ the\ current\ pixel\ with\ the\ one\ below\ and\ sets\ the\ current\ pixel\ color\ to\ black\ when\ the\ \n\ color\ distance\ is\ greater\ than\ the\ specified\ edge\ distance.\n
+comment6.params=fileName
+comment6.target=void\ createEditedImage(java.lang.String)
+comment6.text=\n\ From\ the\ newPixels\ array,\ create\ a\ new\ image.\n
+numComments=7
