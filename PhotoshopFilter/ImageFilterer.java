@@ -7,8 +7,9 @@
  *  create an image from edges detected in the original.
  *
  * @author edited by Leah Wolf
+ * @author Finalized by Benjamin Santa
  * @author original by Matt Memmo
- * @version February 2020
+ * @version 20220228
  */
 
 import java.io.*;
@@ -72,18 +73,23 @@ public class ImageFilterer {
         for(int row = 0; row < height; row++){
             for (int col = 0; col < width; col++){
                 //CODE GOES HERE
-                //Pixel p = new Pixel(img.getRGB(col, row));
-                Pixel p = imgPixels[row][col];
+                //Calculate the Pixel Value
+                int pixelValue = (imgPixels[row][col].getAlpha() << 24) //ALPHA component occupies the bit position
+                                                                        //from index 24 to 31, so we will left shift
+                                                                        //the alpha value by 24 positions
+                | (imgPixels[row][col].getRed() << 16)  //RED component occupies the bit position
+                                                        //from index 16 to 23, so we will left shift
+                                                        //the alpha value by 16 positions
+                | (imgPixels[row][col].getGreen() << 8) //GREEN component occupies the bit position
+                                                        //from index 8 to 15, so we will left shift
+                                                        //the alpha value by 8 positions
+                | (imgPixels[row][col].getBlue());  //BLUE component doesn't need to shift
 
-                int invertedRed = 255 - imgPixels[row][col].getRed();
-                int invertedGreen = 255 - imgPixels[row][col].getGreen();
-                int invertedBlue = 255 - imgPixels[row][col].getBlue();
-                
-                p.setRGB(invertedRed, invertedGreen, invertedBlue);
-                
-                
-                
+                //Calculate the inverted pixel value
+                int invPixelValue = 255 - pixelValue;
 
+                //Create new pixel object with inverted pixel value
+                newPixels[row][col] = new Pixel(invPixelValue);
             }
         } 
 
@@ -93,7 +99,11 @@ public class ImageFilterer {
      * Mirrors the left side of the image onto the right.
      */
     public void leftRightMirror(){
-        
+        for(int row = 0; row < height; row++){
+            for (int col = 0; col < width; col++){
+                newPixels[row][width - col - 1] = imgPixels[row][col];
+            }
+        }
         
     }
     
@@ -106,7 +116,11 @@ public class ImageFilterer {
      * 
      */
     public void diagMirror(){
-        
+        for(int row = 0; row < height; row++){
+            for (int col = 0; col < width; col++){
+                newPixels[height - row - 1][width - col - 1] = imgPixels[row][col];
+            }
+        }
         
     }
     
@@ -124,7 +138,21 @@ public class ImageFilterer {
      */
     public void edges(){
         int edgeDist = 9;  //You can change this value to determine the best value.
-        
+        for(int row = 0; row < height; row++){
+            for (int col = 0; col < width; col++){
+                if(row != height - 1){
+                    double colorDistance = Pixel.colorDistance(imgPixels[row][col], imgPixels[row +1 ][col]);
+                    if (colorDistance > edgeDist){
+                        newPixels[row][col] = new Pixel(0);
+                    }
+                    else{
+                        newPixels[row][col] = imgPixels[row][col];
+                    }
+                } else {
+                    newPixels[row][col] = imgPixels[row][col];
+                }
+            }
+        }
               
     }
     
