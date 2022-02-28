@@ -1,0 +1,10 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "WeatherApp/org.json.jar"
+    ],
+    "java.project.sourcePaths": [
+        "PhotoshopFilter",
+        "WeatherApp/WeatherApp"
+    ]
+}
