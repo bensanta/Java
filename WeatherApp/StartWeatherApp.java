@@ -37,7 +37,7 @@ public class StartWeatherApp extends JFrame {
          *  and into the HTTP request to OpenWeatherMap API
          */                 
         
-        String API = "";   //your API Key goes here
+        String API = "60f83e663ab5943b5c0a2061c042bf47";   //your API Key goes here
         
         //Ask the user for their ZIP code
         Scanner in = new Scanner (System.in);

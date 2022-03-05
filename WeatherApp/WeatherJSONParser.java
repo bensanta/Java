@@ -47,9 +47,7 @@ public class WeatherJSONParser {
      */
     public WeatherJSONParser(String API, String zip) {
         fullResponse = null;
-        API = "60f83e663ab5943b5c0a2061c042bf47";
-
-
+        
         description = "";
         city = "";
         kTemp = 0;
