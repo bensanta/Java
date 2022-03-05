@@ -5,7 +5,8 @@
     ],
     "java.project.sourcePaths": [
         "WeatherApp/WeatherApp",
+        "Temperature Converter/src",
         "PhotoshopFilter",
-        "Temperature Converter/src"
+        "WeatherApp"
     ]
 }

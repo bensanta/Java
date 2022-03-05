@@ -72,7 +72,19 @@ public class WeatherPanel extends JPanel implements Runnable, MouseListener {
      * Use these methods to assist with Tasks 3 & 4
      */
 
-    
+    public double kelvinToCelcius(int kelvin) {
+        
+        double celsius = kelvin - 273.15;
+
+        return celsius; 
+    }
+
+    public double kelvinToFahrenheit(int kelvin) {
+
+        double fahrenheit = 1.8 * (kelvin - 273.15) + 32;
+
+        return fahrenheit; 
+    }
     
     /**
      * All the drawing happens in paint - like in your Creative Drawing project

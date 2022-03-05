@@ -60,7 +60,10 @@ public class DayForecast {
     
     //Returns the minimum forecasted temperature for the day
     public double getMinTemp(){
-        return minTemp;
+    
+        double celsius = minTemp - 273.15;
+        return celsius;
+
     }
     
     //Returns the maximum forecasted temperature for the day
