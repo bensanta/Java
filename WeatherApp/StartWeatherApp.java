@@ -37,12 +37,17 @@ public class StartWeatherApp extends JFrame {
          *  and into the HTTP request to OpenWeatherMap API
          */                 
         
+        //Task 1: DONE
+
         String API = "60f83e663ab5943b5c0a2061c042bf47";   //your API Key goes here
         
         //Ask the user for their ZIP code
         Scanner in = new Scanner (System.in);
         System.out.println("Enter your zip code: "); 
         String zip = in.next();
+
+        System.out.println("Would you like to use Celsius or Fahrenheit? (c/f)");
+        String cOrF = in.next();
 
         WeatherJSONParser parser = new WeatherJSONParser(API, zip);
         boolean gotInfo = false;

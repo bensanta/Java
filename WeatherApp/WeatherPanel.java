@@ -41,6 +41,8 @@ public class WeatherPanel extends JPanel implements Runnable, MouseListener {
     
     private Thread animator;
 
+
+    
     //Set up all the content for the Panel
     public WeatherPanel(WeatherJSONParser parser) {
         addMouseListener(this);
@@ -63,6 +65,7 @@ public class WeatherPanel extends JPanel implements Runnable, MouseListener {
         setDoubleBuffered(true);
     }
     
+    
     /**
      * TASK 2
      * Write two methods to convert a parameter in degrees Kelvin to 
@@ -72,16 +75,28 @@ public class WeatherPanel extends JPanel implements Runnable, MouseListener {
      * Use these methods to assist with Tasks 3 & 4
      */
 
-    public double kelvinToCelcius(int kelvin) {
-        
-        double celsius = kelvin - 273.15;
+    //Task 2: DONE
+
+    public double kelvinToCelcius(double kelvin) {
+        //kelvin = kTemp;
+        double celsius = kTemp - 273.15;
 
         return celsius; 
     }
+    
+    // An Approach I've tried
+    //-------------------------
+    // if (cOrF.equals("c")){
+    //     kTemp = kTemp - 273.15;
+    // }
+    // else if(cOrF.equals("f")){
+    //     kTemp = 1.8 * (kTemp - 273.15) + 32;
+    // }
 
-    public double kelvinToFahrenheit(int kelvin) {
+    public double kelvinToFahrenheit(double kelvin) {
 
-        double fahrenheit = 1.8 * (kelvin - 273.15) + 32;
+        //kelvin = kTemp;
+        double fahrenheit = 1.8 * (kTemp - 273.15) + 32;
 
         return fahrenheit; 
     }
@@ -116,6 +131,14 @@ public class WeatherPanel extends JPanel implements Runnable, MouseListener {
         //params: image, x, y, width, height, null
         //g.drawImage(getIcon(desc),0, 0, 100, 100, null);
         
+        //Draws the first image status
+        g.drawImage(getIcon(desc), BOARD_WIDTH-100, BOARD_HEIGHT-200, 100, 100, null);
+        g.setColor(Color.BLACK);
+        g.setFont(new Font("Arial", Font.PLAIN, 45));
+        g.drawString(city, 50, BOARD_HEIGHT-150);
+        g.drawString((kTemp + "C"), 50, BOARD_HEIGHT-100);
+        
+
         /**
          * TASK 4: 
          * Display the 5 Day Forecast.
@@ -126,7 +149,9 @@ public class WeatherPanel extends JPanel implements Runnable, MouseListener {
          * Use the methods in the DayForecast class to acquire the information you need.
          */
         
-
+        g.setColor(Color.BLACK);
+        g.setFont(new Font("Arial", Font.PLAIN, 20));
+        g.drawString("5 Day Forecast", 15, 50);
         
         
         

@@ -60,10 +60,7 @@ public class DayForecast {
     
     //Returns the minimum forecasted temperature for the day
     public double getMinTemp(){
-    
-        double celsius = minTemp - 273.15;
-        return celsius;
-
+        return minTemp;
     }
     
     //Returns the maximum forecasted temperature for the day
@@ -88,7 +85,8 @@ public class DayForecast {
     }
     
     public String toString(){
-       return getDate() + " - " + getDescription() + ", MIN: " + minTemp + ", MAX: " + maxTemp; 
+        
+        return getDate() + " - " + getDescription() + ", MIN: " + minTemp + ", MAX: " + maxTemp; 
     }
     
     //Adds a description datapoint for the day
@@ -111,7 +109,7 @@ public class DayForecast {
     
     //Based on temperature t, determines whether there is a new min or max for the day
     private void setMinMax(double t){
-        if (t < minTemp){
+        if (t < (minTemp)){
             minTemp = t;
         }
         if (t > maxTemp){
