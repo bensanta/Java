@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=Bubble
+comment0.text=\n\ Write\ a\ description\ of\ class\ Person\ here.\n\n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=colorRed\ colorGreen\ colorBlue\ bubSize\ bubSpeed\ startLocX\ startLocY
+comment1.target=Bubble(int,\ int,\ int,\ int,\ int,\ int,\ int)
+comment2.params=given\ family\ age
+comment2.target=Bubble(java.lang.String,\ java.lang.String,\ int)
+comment3.params=
+comment3.target=java.lang.String\ getFullName()
+comment4.params=
+comment4.target=int\ getAge()
+comment5.params=
+comment5.target=void\ increaseAge()
+numComments=6

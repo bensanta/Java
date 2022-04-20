@@ -1,0 +1,14 @@
+Define instance variables
+- Color values RGB
+- Size value
+- Speed value
+- Spawn Location XY
+    The program will "listen" for a mouseclick and generate a random coordinate where
+    the bubble will be constructed, using all the necessary values
+        The bubble reacheing the edge, will be calculated using the current
+        coordinate and the radius of the bubble
+        If it reaches the edge
+            Then the bubble will bounce
+        If it doesn't reach an edge, it will keep going in the same direction
+    Additional features: If the user presses the spacebar, the colors of the bubbles will change
+    to a new random color

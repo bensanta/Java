@@ -4,9 +4,9 @@
         "WeatherApp/org.json.jar"
     ],
     "java.project.sourcePaths": [
-        "WeatherApp/WeatherApp",
+        "WeatherApp",
         "Temperature Converter/src",
         "PhotoshopFilter",
-        "WeatherApp"
+        "BubbleClass/BubbleWindow"
     ]
 }

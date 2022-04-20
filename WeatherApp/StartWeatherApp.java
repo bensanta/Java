@@ -45,9 +45,10 @@ public class StartWeatherApp extends JFrame {
         Scanner in = new Scanner (System.in);
         System.out.println("Enter your zip code: "); 
         String zip = in.next();
-
-        System.out.println("Would you like to use Celsius or Fahrenheit? (c/f)");
-        String cOrF = in.next();
+        
+        //System.out.println("Would you like to use Celsius or Fahrenheit? (c/f)");
+        //String cOrF = in.next();
+        //!Add a check to make sure the prefferred temperature is being used
 
         WeatherJSONParser parser = new WeatherJSONParser(API, zip);
         boolean gotInfo = false;
