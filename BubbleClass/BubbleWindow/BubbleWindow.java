@@ -64,7 +64,6 @@ public class BubbleWindow extends JFrame{
 
         public void mousePressed(MouseEvent e) {
 
-            
             //Getting location
             int x = e.getX();
             int y = e.getY();
