@@ -1,0 +1,40 @@
+** Basic outline **
+
+Frontend
+- Create a simple GUI
+    - White background
+    - Make a 5x6 grid (Each box will have a black outline)
+        *****
+        *****
+        *****
+        *****
+        *****
+        *****
+    - (Optional) Make a place for user inpur on the GUI
+    - (Optional) Create a clickable OK Button
+        - if mouseX and mouseY is clicked between the top left and bottom right corner
+            - then, the button was pressed.
+    - Use the terminal command line for user input
+
+
+Backend
+- Generate a random word from the wordlist, and store it in a variable
+- For loop 6 times:
+    - Take user input using a scanner
+        - if userWord == randomWord:
+            - Check if the user input is 5 letters, not more, not less:
+                - if not, then stop the program, and throw an error msg
+                - if it is, Check if the word the user entered, is in the world list
+                    - if not, then don't let the user guess go through, and throw an error
+                    - if the user entered word is 5 letters, and in the word list, place
+                    each letter, in the corresponding location in the grid
+            - (Front and Backend) Create a method which changes the colours of the grid, depending on
+            if the letter(s) match the one that was randomly generated
+            - Then, for loop through the word 5 times (checking each letter):
+                - if the letter is in the word, turn the box yellow
+                - else if the letter is in the correct position, turn the box green
+                - else, turn it gray
+            - Then, ask for another user input
+    - else, break (no need to loop or check any of the new words)
+
+
