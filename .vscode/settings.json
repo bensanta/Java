@@ -7,6 +7,7 @@
         "WeatherApp",
         "Temperature Converter/src",
         "PhotoshopFilter",
-        "BubbleClass/BubbleWindow"
+        "BubbleClass/BubbleWindow",
+        "wordleGame/src"
     ]
 }

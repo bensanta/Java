@@ -14,13 +14,12 @@ import java.util.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.util.random.*;
+import java.util.*;
 
 public class BubbleWindow extends JFrame{
     
     // The BubbleWindow Constructor - creates the frame and adds the graphics panel to it.
     public BubbleWindow() {
-
         setTitle("Look at the Bubbles!");
         setSize(600, 400);
         // the event that triggers the end of the program
