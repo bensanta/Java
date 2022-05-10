@@ -8,6 +8,7 @@
         "Temperature Converter/src",
         "PhotoshopFilter",
         "BubbleClass/BubbleWindow",
-        "wordleGame/src"
-    ]
+        "brickBreaker/brickBreaker"
+    ],
+    "java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx16G -Xms100m"
 }

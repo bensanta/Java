@@ -8,6 +8,8 @@
  
 import java.util.*;
 
+Random f = new Random();
+
 public class Bubble{
   //Instance variables:
   private int red;
@@ -22,28 +24,25 @@ public class Bubble{
   private int xLocation;
   private int yLocation;
   
-  
-  
-  // Your constructor here...
-  // Add whatever parameters you need
+  //Constructors
   public Bubble(int startLocX, int startLocY){
     //Initialise instance variables
-    int colourR = (int) random(255);
-    red = colourR;
-    green = colourR;
-    blue = colourR;
+    //Creating random color values for the red, green, and blue components of the bubbles
+    red = f.nextInt(255);
+    green = f.nextInt(255);
+    blue = f.nextInt(255);
     
-    size = (int) random(200);
+    //Maximum size of 200
+    size = f.nextInt(200);
     
-    int speedR = (int) random(1, 10);
+    //Minimum bubble speed of 1, and maximum of 10
+    int speedR = f.nextInt(10 - 1) + 1;
     xSpeed = speedR;
     ySpeed = speedR;
     
     xLocation = startLocX;
     yLocation = startLocY;
   }
-  
-  //Your methods here:
   //Getters - tell the user information about the object
     public int getXLocation(){
         return xLocation;

@@ -1,5 +1,7 @@
+//Imported the "sound" library, to be able to play sound
+import processing.sound.*;
 
-//Don't forget to import the library from the "Sketch" dropdown
+//Imported the "video" library, to be able to Capture video
 import processing.video.*;  
 
 Capture cam;  //2 Captures so you can compare images 
@@ -9,14 +11,20 @@ int count;
 PImage firstImg;
 PImage secondImg;
 
+SoundFile file;
+
 void setup() {
   frameRate(20);   //Looking at 20 frames per second. 
   size(600, 300);  //Window is large enough for 2 side-by-side images
    String[] cameras = Capture.list();
+   
+   //this loads the file based on the file name
+   file = new SoundFile(this,"ding.aiff");
+   file.amp(.75); //Sets the sound of the file to 75%
 
+  //If a camera isn't available, then give an error msg
   if (cameras == null) {
     println("Failed to retrieve the list of available cameras, will try the default...");
-   
   } else if (cameras.length == 0) {
     println("There are no cameras available for capture.");
     exit();
@@ -26,7 +34,7 @@ void setup() {
   
     // The camera can be initialized directly using an element
     // from the array returned by list():
-    //Create 2 separate places to store video frames
+    // Create 2 separate places to store video frames
     cam = new Capture(this, 320, 240,  cameras[0], 30);
     cam.start();
   
@@ -51,10 +59,9 @@ void draw() {
     firstImg.loadPixels();
     secondImg.loadPixels();
 
-    float change = 0;
-    float threshold = 100;  //YOU WILL NEED TO CHANGE THIS NUMBER
-                            //VALUE IS LIKELY MUCH HIGHER
-
+    float threshold = 150;  //Threshold of what counts as a motion, and what doesn't
+                           
+    float changeOfRGB = 0.0;
     // no need to look at all pixels
     // approx 1/5th of them will be enough to detect a change
     // This loop will look at every 5th pixel in the images.
@@ -63,28 +70,34 @@ void draw() {
       //Get the red component of each corresponding pixel in the two images
       float r = red(firstImg.pixels[i]);
       float r2 = red(secondImg.pixels[i]);
-     
-      /**
-        TASK 1
-        Compare r and r2 - Do something with the difference!
-        You'll want to do something similar with the blue & green components, too.
-        Can you store the total change in color components from firstImg to secondImg?
-      */
-
+      float rChange = r2 - r;
+      
+      //Get the green component of each corresponding pixel in the two images
+      float g = green(firstImg.pixels[i]);
+      float g2 = green(secondImg.pixels[i]);
+      float gChange = g2 - g;
+      
+      //Get the blue component of each corresponding pixel in the two images
+      float b = blue(firstImg.pixels[i]);
+      float b2 = blue(secondImg.pixels[i]);
+      float bChange = b2 - b;
+      
+      //Adding together the difference between the RGB values, to later check for motion
+      changeOfRGB = rChange + gChange + bChange;
+      
   
     }
-    println(change);
+    println(changeOfRGB); //Prints the current changeOfRGB Value
     
-    /** 
-      TASK 2
-      once change is greater than threshold, this means
-      motion has been detected, you will want to:
-         1) set firstImg and secondImg equal to null 
-         2) set count = 0
-         3) print that there has been movement to the console
-         4) play a sound
-    */
-
+    if (changeOfRGB >= threshold || changeOfRGB <= -threshold){
+      //resets the two frames
+      firstImg = null;
+      secondImg = null;
+      
+      count = 0;
+      println("There has been movement detected");
+      file.play(); //plays the soundfile
+    }
     updatePixels();
   }
 }
@@ -106,10 +119,3 @@ void loadVideos(){
     }
   }
 }
-
-//Pseudocode
-/*
-*
-*
-*
-*/

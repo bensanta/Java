@@ -36,7 +36,3 @@ Backend
                 - else, turn it gray
             - Then, ask for another user input
     - else, break (no need to loop or check any of the new words)
-
-
-
-

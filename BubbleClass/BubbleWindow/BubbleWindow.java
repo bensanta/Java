@@ -37,7 +37,7 @@ public class BubbleWindow extends JFrame{
         new BubbleWindow();
     }
 
-    public static class BubblePanel extends JPanel  implements Runnable, MouseListener {
+    public static class BubblePanel extends JPanel implements Runnable, MouseListener {
 
         private Thread animator;
         
